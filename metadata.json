@@ -1,0 +1,5 @@
+{
+  "name": "Travelato",
+  "description": "Travelato is an AI-powered travel planner for students on a budget. It generates personalized, budget-friendly itineraries considering travel duration, cost optimization, local attractions, food options, and student discounts, with features for offline access and sustainability tips.",
+  "requestFramePermissions": []
+}

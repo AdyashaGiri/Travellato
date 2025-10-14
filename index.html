@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-g" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travelato - AI Travel Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-primary: #111827; /* Dark Gray/Navy */
+        --bg-secondary: #1f2937; /* Slightly lighter gray */
+        --bg-card: #1f2937d9; /* Semi-transparent card bg */
+        --text-primary: #f9fafb; /* Off-white */
+        --text-secondary: #9ca3af; /* Lighter gray */
+        --accent-primary: #8b5cf6; /* Purple */
+        --accent-secondary: #3b82f6; /* Blue */
+        --accent-gradient-from: #8b5cf6;
+        --accent-gradient-to: #ec4899; /* Pink */
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+      }
+      
+      .animated-bg {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        overflow: hidden;
+      }
+      .animated-bg li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+        border-radius: 50%;
+      }
+      .animated-bg li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+      .animated-bg li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+      .animated-bg li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+      .animated-bg li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+      .animated-bg li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+      .animated-bg li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+      .animated-bg li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+      .animated-bg li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+      .animated-bg li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+      .animated-bg li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+
+      @keyframes animate {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+      }
+      
+      @media print {
+        .no-print { display: none !important; }
+        body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background-color: #ffffff; color: #000000; }
+        .printable-content { display: block !important; margin: 0; padding: 0; box-shadow: none !important; border: none !important; background-color: #ffffff !important; }
+        .print-text-black { color: #000 !important }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.24.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
