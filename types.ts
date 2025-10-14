@@ -14,7 +14,7 @@ export interface Cost {
 }
 
 export interface Activity {
-  time: string;
+  timing: string;
   description: string;
   location: string;
   estimatedCost: number;

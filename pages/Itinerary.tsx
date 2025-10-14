@@ -36,7 +36,7 @@ const ActivityCard: React.FC<{ activity: Activity; currency: string; }> = ({ act
             <div className="p-4 bg-black/20 rounded-lg">
                 <div className="flex justify-between items-start">
                     <div>
-                        <p className="text-sm font-bold text-[var(--accent-primary)] print-text-black">{activity.time}</p>
+                        <p className="text-sm font-bold text-[var(--accent-primary)] print-text-black">{activity.timing}</p>
                         <p className="font-semibold text-gray-100 mt-1 print-text-black">{activity.description}</p>
                     </div>
                     <div className="text-right flex-shrink-0 ml-4">
@@ -77,7 +77,7 @@ const ItineraryPage: React.FC<ItineraryPageProps> = ({ itinerary, onSave, onDele
         itinerary.itinerary.forEach(day => {
             shareText += `**Day ${day.day}: ${day.title}**\n`;
             day.activities.forEach(activity => {
-                shareText += `- ${activity.time}: ${activity.description} at ${activity.location}\n`;
+                shareText += `- ${activity.timing}: ${activity.description} at ${activity.location}\n`;
             });
             shareText += `\n`;
         });

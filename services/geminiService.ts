@@ -32,13 +32,13 @@ const itinerarySchema = {
                         items: {
                             type: Type.OBJECT,
                             properties: {
-                                time: { type: Type.STRING, description: "Suggested time for the activity, e.g., '9:00 AM' or 'Afternoon'." },
+                                timing: { type: Type.STRING, description: "Suggested timing for the activity. Instead of a fixed start time, provide a flexible time block or estimated duration. e.g., 'Morning (2-3 hours)', 'Afternoon', 'Approx. 4 hours'." },
                                 description: { type: Type.STRING, description: "Detailed description of the activity, including what to do and see." },
                                 location: { type: Type.STRING, description: "Name of the location or address for the activity." },
                                 estimatedCost: { type: Type.NUMBER, description: "Estimated cost for this single activity per person." },
                                 category: { type: Type.STRING, description: "Category of the activity (e.g., Food, Museum, Nature, Sightseeing, Adventure, Nightlife, Art & Culture, History, Travel)." }
                             },
-                            required: ["time", "description", "location", "estimatedCost", "category"]
+                            required: ["timing", "description", "location", "estimatedCost", "category"]
                         }
                     },
                     dailyCost: { type: Type.NUMBER, description: "The total estimated cost for this day." }
@@ -87,6 +87,7 @@ export const generateItinerary = async (preferences: TravelerPreferences): Promi
     5.  **Local Experience:** Include authentic, non-touristy experiences.
     6.  **Structure:** Follow the provided JSON schema precisely. Ensure all costs are in a single, appropriate currency for the primary destination. The tripTitle should reflect the multi-destination nature of the trip, if applicable.
     7.  **Category:** Make sure to assign a relevant category for each activity from the list: Food, Museum, Nature, Sightseeing, Adventure, Nightlife, Art & Culture, History, Travel.
+    8.  **Activity Timing:** For each activity, specify a flexible timing or duration (e.g., "Morning", "Afternoon (approx. 3 hours)") instead of a rigid start time (e.g., "9:00 AM"). This gives the traveler more flexibility.
 
     Please generate the itinerary now.
   `;
